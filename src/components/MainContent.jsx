@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PieChartt from "../components/PieChart"; // Import the MainContent component
 
-const CommonDetailsContent = ({ onSubmit, onCancel }) => {
+const MainContent = ({ onSubmit, onCancel }) => {
     const [basicData, setBasicData] = useState(null);
     const [formData, setFormData] = useState({
         location: "",
@@ -48,15 +48,21 @@ const CommonDetailsContent = ({ onSubmit, onCancel }) => {
             <div className="mt-8 grid grid-cols-2 gap-4">
                 <div>
                     <label className="block mb-2 text-gray-700">Location</label>
-                    <input
-                        type="text"
+                    <select
                         name="location"
                         className="w-full p-2 border border-gray-300 rounded"
-                        placeholder="Enter Location"
                         value={formData.location}
                         onChange={handleInputChange}
-                    />
+                    >
+                        <option value="" disabled>Select a city</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
                 </div>
+
 
                 <div>
                     <label className="block mb-2 text-gray-700">Area In Sq. Ft</label>
@@ -107,4 +113,4 @@ const CommonDetailsContent = ({ onSubmit, onCancel }) => {
     );
 };
 
-export default CommonDetailsContent;
+export default MainContent;

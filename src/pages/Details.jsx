@@ -8,7 +8,6 @@ import {useNavigate, useLocation} from 'react-router-dom';
 
 const CommonDetails = () => {
     const navigate = useNavigate();
-    const [basicData, setBasicData] = useState([]);
 
     const location = useLocation();
     const { company } = location.state || {}; // Extract the company object

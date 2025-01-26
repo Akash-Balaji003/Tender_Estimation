@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
-const EmployeePage = ({ onCancel, companyData }) => {
-    const location = useLocation();
+const CompanyDeets = ({ onCancel, companyData }) => {
 
-    const [isLoading, setIsLoading] = useState(true); // Loading state
     const [error, setError] = useState(null); // Error state
 
     const [formData, setFormData] = useState({
@@ -123,4 +120,4 @@ const EmployeePage = ({ onCancel, companyData }) => {
     );
 };
 
-export default EmployeePage;
+export default CompanyDeets;
