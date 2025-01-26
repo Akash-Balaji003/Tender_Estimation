@@ -12,7 +12,7 @@ const AnotherScreen = () => {
 
             {/* Main Content */}
             <div className="flex-1 bg-white">
-                <EditEmp navigateTo="/AdminEmp" />
+                <EditEmp />
             </div>
         </div>
     );

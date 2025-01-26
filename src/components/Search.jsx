@@ -42,12 +42,15 @@ const MainContent = ({ }) => {
         }
     }, []);    
 
-    const handleUserClick = (common_name, profile_id) => {
+    const handleUserClick = (company) => {
         // Clear search query and results
         setSearchTerm("");
         setFilteredData([]);
     
+        // Pass the company object using state
+        navigate("/CompanyDetails", { state: { company } });
     };
+    
 
     return (
         <main className="p-6">
@@ -75,7 +78,7 @@ const MainContent = ({ }) => {
                             <div
                                 key={employee.Company_ID}
                                 className="p-4 border rounded-md shadow-sm hover:shadow-md "
-                                onClick={() => handleUserClick(employee.Company_Name, employee.profile_id)}
+                                onClick={() => handleUserClick(employee)}
                             >
                                 <h2 className="text-lg font-semibold">{employee.Company_Name}</h2>
                                 <p className="text-sm text-gray-500">
@@ -101,6 +104,7 @@ const MainContent = ({ }) => {
                             <div
                                 key={company.Company_ID}
                                 className="p-4 border rounded-md shadow-sm hover:shadow-md"
+                                onClick={() => handleUserClick(company)}
                             >
                                 <h2 className="text-lg font-semibold">{company.Company_Name}</h2>
                                 <p className="text-sm text-gray-500">
